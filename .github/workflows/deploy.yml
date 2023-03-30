@@ -47,9 +47,6 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    # Set environment variables
-    - run: echo VERSION=$(cat ./VERSION) >> $GITHUB_ENV
-
     # Build & Publish
     - name: Build & Publish Docker Image
       uses: docker/build-push-action@v4
@@ -57,7 +54,7 @@ jobs:
         context: ./pihole-unbound
         push: true
         platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
-        tags: ${{ steps.meta.outputs.tags }},ghcr.io/nickzelei/pihole-unbound:${{ env.VERSION }}
+        tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache
         cache-to: type=registry,ref=ghcr.io/nucleuscloud/pihole-unbound-buildcache,mode=max
