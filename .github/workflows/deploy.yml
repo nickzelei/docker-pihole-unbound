@@ -60,8 +60,8 @@ jobs:
         build-args: PIHOLE_VERSION=${{ env.VERSION }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache
-        cache-to: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache,mode=max
+        # cache-from: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache
+        # cache-to: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache,mode=max
 
   release:
     runs-on: ubuntu-latest
