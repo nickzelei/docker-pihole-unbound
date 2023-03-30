@@ -61,7 +61,7 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache
-        cache-to: type=registry,ref=ghcr.io/nucleuscloud/pihole-unbound-buildcache,mode=max
+        cache-to: type=registry,ref=ghcr.io/nickzelei/pihole-unbound-buildcache,mode=max
 
   release:
     runs-on: ubuntu-latest
