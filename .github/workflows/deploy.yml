@@ -51,7 +51,7 @@ jobs:
     - name: Build & Publish Docker Image
       uses: docker/build-push-action@v4
       with:
-        context: ./pihole-unbound
+        context: pihole-unbound
         push: true
         platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
         tags: ${{ steps.meta.outputs.tags }}
