@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git fetch
-VERSION=$(cat VERSION)
+VERSION="v$(cat VERSION)"
 echo "$VERSION"
-git tag "v$VERSION" origin/main
+git tag "$VERSION" origin/main
 git push origin --tags
